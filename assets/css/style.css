@@ -1,0 +1,129 @@
+/* Using root to define variables for use throughout my css sytling */
+:root{
+    --greyBlue: rgb(57, 77, 104);
+    --hoverBlue:rgb(35, 48, 65);
+    --aquaBlue:rgb(28, 184, 184);
+}
+
+
+html{
+    font: size 100%;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    /* removes basic styles */
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    max-width:1500px;
+}
+
+
+.nav-bar{
+    /* turns nav-bar class into flexbox container */
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    line-height: 1rem;
+    overflow:hidden;
+    margin-bottom:0.5rem;
+    background-color: var(--greyBlue);
+
+}
+
+.page-links{
+    list-style: none;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:0%;
+    margin:0;
+
+}
+
+.page-links li{
+    flex:1 0 10%;
+    text-align: center;
+}
+
+.brand a, .page-links a{
+    display:inline-block;
+    padding:.8rem;
+    color:var(--aquaBlue);
+    text-decoration: none;
+}
+
+.brand{
+    background-color: var(--aquaBlue);
+    margin:0 auto;
+    
+}
+.brand a{
+    text-decoration: none;
+    color:var(--greyBlue)
+}
+/* applied same color to all a children in class 'brand' and 'page-links' */
+.page-links a {
+    flex: 1 0 ;
+    font-size:16px;
+    font-weight: bolder;
+    transition: all ease-in-out 0.35s;
+    color:var(--aquaBlue); 
+    
+}
+/*using a psedo class to set css properties when the state of .page-links is being hovered over*/
+.page-links a:hover{
+    /* when */
+    background-color:var(--hoverBlue);
+}
+
+.page-links a:after{
+    content:"";
+    display: block;
+    /* TODO: width > 100% and center */
+    margin:0 auto;
+    width:100%;
+    border-bottom:4px var(--aquaBlue) solid;
+    padding-top:10px; }
+    
+
+
+@media screen and (min-width:450px) {
+    .page-links{
+        width:100%;
+    }
+
+}
+
+@media screen and (min-width:992px){
+    .page-links{
+        width: 20%;
+    }
+    .nav-bar{ 
+        height: 10vh;
+    }
+    header{
+        margin-right: auto;
+        margin-left: 0;
+    }
+    .brand a{
+        padding-right:0%;
+    }
+
+    body{
+        max-width: none;
+    }
+}
+@media screen and (min-width:1400px){
+    .page-links{
+        width: 15%;
+    }
+@media screen and (min-width:1800px){
+    .page-links{
+        width: 12.5%;
+    }
