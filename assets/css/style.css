@@ -3,14 +3,17 @@
     --greyBlue: rgb(57, 77, 104);
     --hoverBlue:rgb(35, 48, 65);
     --aquaBlue:rgb(28, 184, 184);
+    --hoverAqua:rgb(34, 230, 230);
 }
 
 
 html{
-    font: size 100%;
+    font-size: 100%;
     line-height: 1.5rem;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    width:100vw;
+    overflow-y: scroll;
 }
 
 body{
@@ -29,7 +32,18 @@ main{
     position:relative;
     width:100%;
     justify-content:flex-start;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    height: fit-content;
 }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .separator{
     background-color: var(--aquaBlue);
     height: .25vh;
@@ -40,11 +54,11 @@ main{
 
     /* turns nav-bar class into flexbox container */
     display:flex;
-    flex-wrap:wrap;
+    /* flex-wrap:wrap; */
     justify-content: center;
     align-items: center;
     line-height: 1rem;
-    height:10vh;
+    /* height:10vh; */
     overflow:hidden;
     margin-bottom:0;
     background-color: var(--greyBlue);
@@ -117,6 +131,8 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
     height:15vh;
+    width:99%;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
 }
@@ -155,6 +171,7 @@ main{
     margin: 5px auto 0 auto;
 }
 
+/* styling all section headers */
 .section-header{
     display: inline-block;
     margin-left:1%;
@@ -175,42 +192,82 @@ main{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    height:fit-content ;
+    margin-bottom: 1vh;
 
+}
+.card-container a{
+    display: flex;
+    border: 3px var(--aquaBlue) solid;
+    border-radius: 7px;
 }
 
 .project-card-large{
     padding:0;
     margin:1% 2.5%;
     width:100%;
-    height:50%;
-    border: 3px olive dashed; 
+    height:20vh; 
 }
 .project-card{
-    margin: 1% 1.25%;
+    margin: 1% 2.5%;
     padding:0 ;
-    height: 100px;
-    width: 45%;
-    border:3px olive dashed; 
+    height: 10vh;
+    width: 95%;
+
 }
 
+.card-container a:hover{
+    box-shadow: 0px 0px 10px var(--hoverAqua);
+    transition: ease-in 0.45s;
+}
 
 /* Contact Me Styling */
 
 .contact-links{
     list-style: none;
+    margin:0;
+    padding:0;
 }
 .contact-links a{
     text-decoration: none;
+
+}
+
+
+.contact-container ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.contact-links li{
+    display: flex;
+    justify-content: center;
+    background-color: var(--greyBlue);
+    width:100%;
+    margin:3px 0;
+
+}
+
+.contact-links a{
+    width: 100%;
+    text-align: center;
+    padding:10px;
+    color:var(--aquaBlue)
 }
 .contact-links a::after{
     content:"";
     display: block;
     /* TODO: width > 100% and center */
     margin:0 auto;
-    width:3em;
+    width:7rem;
     border-bottom:4px var(--aquaBlue) solid;
     /* space between underline and word */
-    padding-top:10px; 
+    padding-top:5px; 
+}
+
+.contact-links a:hover{
+    background-color: var(--hoverBlue);
 }
 
 
@@ -225,8 +282,18 @@ main{
     }
     .page-links a::after{
         width:3.5em;
+
+
+
     }
 
+
+@media screen and (min-width:768px){
+    .project-card{
+        width:45%;
+        margin: 1% 1.25%;
+    }
+}
 }
 
 @media screen and (min-width:992px){
