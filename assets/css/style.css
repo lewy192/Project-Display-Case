@@ -7,11 +7,14 @@
 }
 
 
+/* setting basic properties for the html */
+
 html{
     font-size: 100%;
     line-height: 1.5rem;
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
 
 }
 
@@ -22,28 +25,36 @@ body{
     box-sizing: border-box;
 }
 
+/* turns the main into a flex box */
 main{
     display:flex;
     flex-direction: column;
     position:relative;
     width:100%;
     justify-content:flex-start;
-    /* align-items: center; */
+    align-items: center;
     height: fit-content;
+    flex-basis: auto;
 }
 
+/* turns the content into a flex box */
 .content{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    /* align-items: center; */
+    /* flex-basis: auto; */
 }
 
+/* adds a line to separate the header from the content */
 .separator{
     background-color: var(--aquaBlue);
     height: .25vh;
     width:100%;
 }
+
+/* properties of the nav bar */
+
 
 .nav-bar{
 
@@ -119,7 +130,11 @@ main{
     color:var(--greyBlue)
 }
 
-/* background image */
+
+
+/* Background image properties */
+
+
 .hero-image{
     background-image:url('/assets/images/Melbourne-Tracks1.jpg');
     background-position:center;
@@ -131,6 +146,7 @@ main{
     display: flex;
     justify-content: flex-end;
 }
+
 .hero-text{
     /* pushes children down */
     margin-top:auto;
@@ -147,7 +163,9 @@ main{
     margin-top:10%;
 }
 
-/* About Me Stlying */
+
+
+/* About Me properties */
 
 .about-block article{
     display: flex;
@@ -170,14 +188,13 @@ main{
     border-bottom: 3px var(--greyBlue) solid;
 }
 
+
 /* Work Styling */
 .card-container{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
-    height:fit-content ;
-    margin-bottom: 1vh;
+    height:50rem;
 
 }
 .card-container a{
@@ -187,20 +204,13 @@ main{
     
 }
 
-.project-card-large{
-    display: flex;
-    padding:0;
-    margin:1% 0;
-    width:95%;
-    height:20vh; 
+.card-container .project-card {
+    flex: 1 1 100%;
 }
-.project-card{
-    margin: 1% 0;
-    padding:0 ;
-    height: 10vh;
-    width: 95%;
-    display: flex;
+.card-container .project-card-large {
+    flex: 1 1 100%;
 }
+
 
 .card-container a:hover{
     box-shadow: 0px 0px 15px var(--hoverAqua);
@@ -208,19 +218,25 @@ main{
 }
 
 .card-text {
-    line-height: 1;
+
+    flex:1 1;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: .75;
     color:var(--greyBlue);
     background-color: var(--aquaBlue);
+    height:auto;
     width:20%;
     margin-top: auto;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 
     
 }
 
 .card-text h3,h4{
     display: inline-block;
-    margin: 0em;
+    margin-top:auto;
+    margin-bottom: 0;
     padding: .5em 0 .5em .5em;
 }
 
@@ -247,17 +263,15 @@ main{
 
 }
 
-
 .contact-container ul{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
     
 }
 .contact-links li{
     display: flex;
     justify-content: center;
-    background-color: var(--greyBlue);
     width:100%;
     margin:3px 0;
 
@@ -267,7 +281,7 @@ main{
     width: 100%;
     text-align: center;
     padding:10px;
-    color:var(--aquaBlue)
+    color:var(--greyBlue)
 }
 .contact-links a::after{
     content:"";
@@ -275,14 +289,15 @@ main{
     /* TODO: width > 100% and center */
     margin:0 auto;
     width:7rem;
-    border-bottom:4px var(--aquaBlue) solid;
+    border-bottom:4px var(--greyBlue) solid;
     /* space between underline and word */
     padding-top:5px; 
 }
 
 
 .contact-links a:hover{
-    background-color: var(--hoverBlue);
+    background-color: var(--aquaBlue);
+    transition: ease-in 0.45s;
 }
 
 /* makes 'overflow' bold so it aligns with their original logo */
@@ -290,9 +305,7 @@ main{
     font-weight: 900;
 }
 
-
-
-@media screen and (min-width:450px) {
+@media screen and (min-width:480px) {
     /* at a screen width of 450px the page links in the nav bar will expand to take up 100% of the width */
     .page-links{
         width:100%;
@@ -302,17 +315,13 @@ main{
     }
     .page-links a::after{
         width:3.5em;
-
-
-
     }
-
 
 @media screen and (min-width:768px){
-    .project-card{
+    /* .project-card{
         width:45%;
         margin: 1% 1.25%;
-    }
+    } */
 }
 }
 
@@ -343,10 +352,118 @@ header{
     z-index:5;
 }
 
+/* general properties for each content block */
+
+.about-block, .work-block, .contact-block {
+    display:flex;
+    flex-direction: row;
 }
-@media screen and (min-width:1400px){
+.section-header::after{
+    content:'';
+    display: inline-block;
+    margin:0 auto;
+    width:0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.section-header{ 
+    display: flex;
+    justify-content: flex-start;
+    border-right: 3px var(--greyBlue) solid;
+    padding-right:3rem;
+    /* width:4.5rem; */
+    font-size: 20px;
+    line-height: 1.2;
+    
+    
+}
+.about-block article{
+    padding-left:20px;
+}
+.work-block .card-container{
+    padding-left:20px;
+
+}
+.contact-block .contact-container{
+    padding-left: 20px;
+}
+.content{
+    padding: 0 5rem;
+}
+/* Work-block */
+
+.block-separator{
+    height: 2rem;
+    width: 100%;
+}
+.about-block .section-header{
+    flex: 1 1 10%;
+}
+.about-block  article{
+    flex: 1 1 90%
+}
+
+.work-block .section-header{
+    flex: 1 1 10%;
+
+}
+.project-card, .project-card-large{
+    margin: 5px;
+    padding: 5px;
+}
+
+.work-block .card-container{
+    flex: 1 1  90%;
+}
+
+.card-container .project-card {
+    flex: 1 1 45%;
+}
+.card-container .project-card-large {
+    flex: 1 1 100%;
+}
+/* contact styling */
+
+
+.contact-block .section-header{
+    flex: 1 1 10%;
+
+}
+.contact-block .contact-container{
+    flex: 1 1 90%;
+}
+
+.contact-container{
+    display: flex;
+    justify-self: unset;
+}
+
+.contact-container .contact-links{
+    width:100%
+}
+
+.contact-links li{ 
+    display: flex;
+    flex: 1 1 20%;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+
+}
+
+.contact-links a{
+    background-color:none;
+}
+
+.contact-block{
+    margin-bottom: 2rem;
+}
+@media screen and (min-width:1281px){
     .page-links{
         width: 15%;
+    }
+    .content{
+        padding:0 2rem;
     }
 }
 @media screen and (min-width:1400px){
