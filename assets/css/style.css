@@ -160,8 +160,8 @@ main{
     font-size: 110%;
 }
 
-.hero-text h1{
-    margin-top:10%;
+.hero-text > * {
+    margin:8% 0 8% auto;
 }
 
 
@@ -306,6 +306,10 @@ main{
     font-weight: 900;
 }
 
+.block-separator{
+    height: 2rem; 
+}
+
 @media screen and (min-width:480px) {
     /* at a screen width of 450px the page links in the nav bar will expand to take up 100% of the width */
     .page-links{
@@ -395,9 +399,7 @@ header{
 }
 /* Work-block */
 
- .block-separator{
-    height: 2rem; 
-}
+
 .about-block .section-header{
     flex: 1 1 10%;
 }
