@@ -11,3 +11,11 @@ https://www.steckinsights.com/shorten-length-border-bottom-pure-css/
 - Auto Margins for the nav bar: https://css-tricks.com/how-auto-margins-work-in-flexbox/
 - :hover docs https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
 - Hero Image: https://www.w3schools.com/howto/howto_css_hero_image.asp
+
+
+
+## TODO
+- working hrefs
+- desktop version
+- upload resume
+- add more projects

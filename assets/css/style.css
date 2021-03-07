@@ -20,7 +20,7 @@ html{
 
 body{
     /* removes basic styles */
-    padding: 0;
+    padding:0;
     margin:0;
     box-sizing: border-box;
 }
@@ -35,6 +35,7 @@ main{
     align-items: center;
     height: fit-content;
     flex-basis: auto;
+    
 }
 
 /* turns the content into a flex box */
@@ -265,7 +266,7 @@ main{
 
 .contact-container ul{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     /* justify-content: space-evenly; */
     
 }
@@ -285,10 +286,10 @@ main{
 }
 .contact-links a::after{
     content:"";
-    display: block;
+    display: flex;
     /* TODO: width > 100% and center */
     margin:0 auto;
-    width:7rem;
+    width:6em;
     border-bottom:4px var(--greyBlue) solid;
     /* space between underline and word */
     padding-top:5px; 
@@ -326,6 +327,8 @@ main{
 }
 
 @media screen and (min-width:992px){
+
+
     .page-links{
         width: 20%;
         padding-right:7%;
@@ -392,9 +395,8 @@ header{
 }
 /* Work-block */
 
-.block-separator{
-    height: 2rem;
-    width: 100%;
+ .block-separator{
+    height: 2rem; 
 }
 .about-block .section-header{
     flex: 1 1 10%;
@@ -424,23 +426,24 @@ header{
 }
 /* contact styling */
 
-
+.contact-container ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.contact-links li{
+    justify-content: space-evenly;
+}
 .contact-block .section-header{
     flex: 1 1 10%;
 
 }
 .contact-block .contact-container{
     flex: 1 1 90%;
-}
+} 
 
-.contact-container{
-    display: flex;
-    justify-self: unset;
-}
 
-.contact-container .contact-links{
-    width:100%
-}
+
 
 .contact-links li{ 
     display: flex;
